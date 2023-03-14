@@ -13,7 +13,7 @@ const Basket = () => {
           basket.length > 0 ? <BasketTable/>
               :
               <Link to={"/products"}>
-                  <div className="bg-amber-500 flex justify-center w-[150px] py-3 rounded ml-[40%] mt-[20px]">
+                  <div className="bg-amber-500 flex justify-center w-[150px] py-3 rounded ml-[44%] mt-[20px]">
                       ADD PRODUCT+
                   </div>
               </Link>

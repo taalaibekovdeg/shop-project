@@ -8,13 +8,13 @@ import * as events from "events";
 
 const Header = () => {
     const dispatch = useDispatch()
-
+   const {basket} = useSelector(s=>s.basket)
     const currency = useSelector(state => state.main.currency)
 
 
 
     const CURRENCIES = {
-        $: "USA",
+        $: "$",
         RUB: "RUB",
         SOM: "KGS",
         TENGE: "KZT",
@@ -37,8 +37,13 @@ const Header = () => {
                     <NavLink to={"/favorite"} className="text-amber-500 text-[18px] font-bold mx-6">
                         Favorite
                     </NavLink>
-                    <NavLink to={"/basket"} className="text-amber-500 text-[18px] font-bold">
+                    <NavLink to={"/basket"} className="flex  text-amber-500 text-[18px] font-bold">
                         Basket
+                      <div className="mb-1">
+                          {
+                              basket.length !== 0 ?<h1 className="mx-1 border border-amber-600 px-2">{basket.length}</h1>: ""
+                          }
+                      </div>
                     </NavLink>
                 </div>
                 <select
